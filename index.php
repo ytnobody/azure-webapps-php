@@ -12,8 +12,9 @@ $app->get('/hello/{name}', function ($req, $res, $arg) {
 
 ### redirect to /hello/azure_webapps
 $app->get('/', function ($req, $res, $arg) {
-    return $res->withStatus(302)
-               ->withHeader('Location', '/hello/azure_webapps');
+    $res->withStatus(302)
+        ->withHeader('Location', '/hello/azure_webapps');
+    return $res;
 });
 
 $app->run();

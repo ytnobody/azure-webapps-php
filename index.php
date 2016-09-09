@@ -11,9 +11,8 @@ $app->get('/', function ($req, $res, $arg) {
 
 ### output json
 $app->get('/hello/{name}', function ($req, $res, $arg) {
-    return $res->withJson(
-        array(message => 'Hello, '. $arg['name'])
-    );
+    $data = array(message => 'Hello, '. $arg['name']);
+    return $res->withJson($data);
 });
 
 $app->run();
